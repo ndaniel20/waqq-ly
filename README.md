@@ -21,4 +21,6 @@ npm install
 npm start
 ```
 
-Access the application through: http://localhost:3000/
+Access the application through: http://localhost:3000/ after running
+or
+Access the through the permanent  web address https://waqq-ly.site/
