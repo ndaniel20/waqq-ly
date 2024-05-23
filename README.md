@@ -5,7 +5,6 @@ Waqq.ly is a cloud-based web application designed to connect dog owners with dog
 
 ## Prerequisites
 - Node.js (v14 or later)
-- MongoDB (v4.4 or later)
 - npm (v6 or later)
 
 ## Setup
