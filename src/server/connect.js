@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const config = require('./config');
 
 class Database {
     constructor() {
@@ -9,7 +9,7 @@ class Database {
     connect() {
         console.log('Connecting to database...');
         mongoose.set('strictQuery', false);
-        mongoose.connect(process.env.MONGO_URL)
+        mongoose.connect(config.mongodbUri)
             .then(() => {
                 console.log('Connected to database');
                 console.log('---------------------------------');
