@@ -1,0 +1,388 @@
+body {
+    font-family: Kefa;
+    background-image: url('../images/dog-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 50px; 
+    padding-top: 60px; 
+}
+
+/* Heading */
+.top-bar {
+    display: flex;
+    align-items: center; 
+    justify-content: center;  
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.top-bar-logo {
+    height: 50px;
+    width: auto; 
+    margin-left: 5px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px; 
+}
+
+.left-container, .right-container, .bottom-container {
+    flex: 1;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #c4d8dc;
+    box-shadow: 25px 12px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1a8576;
+}
+
+.empty-message {
+    color: #7f7f7f;
+    font-size: 17px;
+}
+
+/* Profile box*/
+.profile-info p, .dog-list p, .bookings div {
+    text-align: center;
+}
+
+.profile-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.dashboard-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-family: Krungthep;
+    font-size: 20px;
+    margin-top: auto;
+}
+
+/* User's dog list */
+.users-dogs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px;
+    padding: 20px;
+}
+
+.dog-card {
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.dog-name {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 0 0 10px 10px;
+}
+
+.dog-card:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+/* User's bookings */
+
+.users-bookings {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px; 
+    gap: 10px; 
+    justify-content: center;
+}
+
+.bookings {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+.booking {
+    width: 50vh; 
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    border-left: 5px solid #94ff82;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.booking.available {
+    border-left: 5px solid #ff5e5e;
+}
+
+.dog-form, .book-form {
+    display: none; 
+    position: fixed; 
+    z-index: 11; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.75); 
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px;
+}
+
+.form-content h2 {
+    text-align: center;
+}
+
+.form-content label {
+    font-family: Krungthep;
+}
+
+.form-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-content form label {
+    margin-bottom: 5px;
+}
+
+.form-content form input[type="text"],
+.form-content form select,
+.form-content form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-content form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.form-content form .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.form-content form .submit-button:hover {
+    background-color: #45a049;
+}
+
+.close-button {
+    float: right;
+    cursor: pointer;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    margin-bottom: 10px; 
+}
+
+.checkbox-wrapper label {
+    margin-right: 10px; 
+}
+
+.dog-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dog-selection div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dog-selection div.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.postcode-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.postcode-input {
+    margin-bottom: 0px!important;
+    width: 50%!important;
+}
+
+.search-button {
+    padding: 8px 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #003974; 
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    font-family: 'Trebuchet MS';
+    display: inline; 
+}
+
+.dogs-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Information panel */
+.information {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.75); 
+}
+
+.information-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.dog-info {
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+}
+
+.dog-card:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    width: 200px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10; 
+    bottom: 120%; 
+    transform: translateX(clamp(-100%, -50vw + 100px, 0%));
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: visibility 0s linear 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* Mobile users */
+@media (max-width: 860px) { 
+    .container {
+        display: block; 
+    }
+}

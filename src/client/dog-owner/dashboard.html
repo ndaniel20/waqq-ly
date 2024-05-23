@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dog-owner/styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="header-container">
+            <h1>Waqq.Ly</h1>
+            <img src="../images/logo.png" alt="Waqq.ly Logo" class="top-bar-logo">
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-container">
+            <h2>Your Profile</h2>
+            <div class="profile-info">
+                <img src="../images/profile.jpeg" alt="Profile Picture" class="profile-pic">
+                <p id="userName"><strong>Name:</strong> <span></span></p>
+                <p id="userEmail"><strong>Email:</strong> <span></span></p>
+                <p id="userType"><strong>Account type:</strong> <span></span></p>
+            </div>
+            <button id="logOut" class="dashboard-button">Log Out</button>
+        </div>
+        <div class="right-container">
+            <h2>Your dogs</h2>
+            <div class="dog-list">
+                <div class="users-dogs" id="dogs">
+
+                </div>
+            </div>
+            <button class="dashboard-button" id="addDogButton">Add a Dog</button>
+            <div class="dog-form" id="dogForm">
+                <div class="form-content">
+                    <span class="close-button" id="closeDog">&times;</span>
+                    <h2 id="formHeader">Add Dog Information</h2>
+                    <form id="addDogForm">
+                        <label for="dogName">Dog's Name:</label>
+                        <input type="text" id="dogName" name="dogName" required>
+
+                        <label for="dogBreed">Breed:</label>
+                        <input type="text" id="dogBreed" name="dogBreed" required>
+
+                        <label for="dogPhoto">Photo:</label>
+                        <input type="file" id="dogPhoto" name="dogPhoto" accept="image/*"> 
+
+                        <label for="dogSize">Size:</label>
+                        <select id="dogSize" name="dogSize">
+                            <option value="small">Small (5-20 lbs)</option>
+                            <option value="medium">Medium (21-50 lbs)</option>
+                            <option value="large">Large (51-99 lbs)</option>
+                            <option value="xl">XL (100 lbs+)</option>
+                        </select>
+
+                        <label for="dogAge">Age:</label>
+                        <select id="dogAge" name="dogAge">
+                            <option value="puppy">Puppy (0-1 years)</option>
+                            <option value="adult">Adult (2-8 years)</option>
+                            <option value="senior">Senior (9 years+)</option>
+                        </select>
+
+                        <label for="extraInfo">Additional Information:</label>
+                        <textarea id="extraInfo" name="extraInfo" placeholder="Any special notes about the dog..."></textarea>
+
+                        <div class="checkbox-wrapper">
+                            <label for="vaccinated">Up to date with vaccinations:</label>
+                            <input type="checkbox" id="vaccinated" name="vaccinated">
+                        </div>
+
+                        <button type="button" class="dashboard-button" id="updateDogButton" style="display: none;">Save Changes</button>
+                        <button type="button" class="dashboard-button" id="deleteDogButton" style="display: none; background-color: red;">Delete Dog</button>
+                        <button type="submit" class="dashboard-button" id="insertDogButton" >Add Dog</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <h2>Current Bookings</h2>
+        <div class="bookings">
+            <div class="users-bookings" id="bookingsList"></div>
+        </div>
+        <button class="dashboard-button" id="addBookButton">Create a booking</button>
+        <div class="book-form" id="bookForm">
+            <div class="form-content">
+                <span class="close-button" id="closeBook">&times;</span>
+                <h2>Create a Booking</h2>
+                <form id="addBookForm"> 
+                    <label for="selectedDogs">Choose your dogs:</label>
+                    <div id="dogSelection" class="dog-selection"></div>
+                    <span id="dogError" class="error-message"></span>
+                    
+                    <label for="postcode">Enter Postcode:</label>
+                    <div class="postcode-container">
+                        <input type="text" id="postcode" name="postcode" class="postcode-input">
+                        <button type="button" id="searchButton" class="search-button">Search</button>
+                    </div>                    
+                    <span id="locationError" class="error-message"></span>
+        
+                    <div id="map" style="height: 250px;"></div>
+        
+                    <label for="bookingDate">Choose a date:</label>
+                    <input type="date" class="booking-date" id="bookingDate" name="bookingDate">
+                    <span id="dateError" class="error-message"></span>
+        
+                    <button type="submit" id="insertBookButton" class="dashboard-button">Book Now</button>
+                </form>
+            </div>
+        </div>
+        <div id="bookingInfo" class="information">
+            <div class="information-content">
+                <span class="close-button" id="closeInfo">&times;</span>
+                <h2>Booking Details</h2>
+                <div id="bookingDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dog-owner/map.js"></script>
+    <script src="dog-owner/app.js"></script>
+</body>
+</html>

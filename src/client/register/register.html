@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register on Waqq.ly</title>
+    <link rel="stylesheet" href="register/styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="header-container">
+            <h1>Waqq.Ly</h1>
+            <img src="../images/logo.png" alt="Waqq.ly Logo" class="top-bar-logo">
+        </div>
+    </div>
+    <div class="registration-wrapper">
+        <div class="registration-box">
+            <h2>Register on Waqq.ly</h2>
+            <div class="options">
+                <button class="option-button" id="dog-owner">Dog Owner</button>
+                <button class="option-button" id="dog-walker">Dog Walker</button>
+            </div>
+            <form id="registration-form">
+                <input type="text" class="input-fields" id="name" placeholder="Name" required>
+                <input type="email" class="input-fields" id="email" placeholder="Email" required>
+                <input type="password" class="input-fields" id="password" placeholder="Password" required>
+                <div class="error-message" id="error"></div>
+                <button type="submit" class="register-btn" id="register">Register</button>
+            </form>
+            <p class="login-link" id="login">Already have an account? <a href="login">Log in</a></p>
+        </div>
+    </div>
+    <script src="register/app.js"></script>
+</body>
+</html>
